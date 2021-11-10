@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Jenna Brown</title>
+        <title>Jenna B</title>
         <style>
             body {
                 background: rgb(240, 209, 255);
-                color: rgb(206, 154, 236);
+                color: rgb(173, 0, 196);
                 padding: 10px;
                 font-family: arial;
             }
@@ -16,11 +16,11 @@
         
             /* navigation menu */
             nav {
-                background: rgb(186, 120, 216);
+                background: rgb(192, 127, 230);
                 margin: 0 auto;
                 display: flex;
                 padding: 10px;
-                border-radius: 50px;
+                border-radius: 20px;
             }
             h1 {
                 display: flex;
@@ -58,12 +58,36 @@
                 flex: 1;
                 padding: 15px;
             }
-            #interests {
-                border: 4px silver ridge;
-                padding: 8px;
+            .content h1 {
+                color: rgb(181, 29, 252);
             }
             h2, h3 {
                 margin: 0px;
+            }
+                /* portfolio styles */
+            .content h1 {
+                color: black;
+            }
+            
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
             }
         </style>
     </head>
@@ -82,23 +106,14 @@
                 </ul>
             </nav>
             <main>
-                <!-- Sidebar section -->
-                <div>
-                    <img src="Images/pfp.png">
+                <div class="content">
+                    <h1>Portfolio</h1>
+                    <ul id="portfolio">
+                        <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                        <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                        <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                    </ul>
                 </div>
-                <div>
-                    <!-- Content section -->
-                    <!-- Interests section -->
-                    <div>
-                        <h3>Interests</h3>
-                        <ul>
-                        <li>Art</li>
-                        <li>Reading</li>
-                        <li>Soccer</li>
-                        </ul>
-                    </div>
-                </div>
-            
             </main>
         </div>
     </body>
