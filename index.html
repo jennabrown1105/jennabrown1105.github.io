@@ -9,15 +9,11 @@
                 padding: 10px;
                 font-family: arial;
             }
-            #all-contents {
-                max-width: 800px;
-                margin: auto;
-            }
-        
             /* navigation menu */
             nav {
                 background: rgb(186, 120, 216);
                 margin: 0 auto;
+                margin-bottom: 20px;
                 display: flex;
                 padding: 10px;
                 border-radius: 50px;
@@ -65,37 +61,47 @@
             h2, h3 {
                 margin: 0px;
             }
+            [class=sidebar] {
+            margin-right: 25px;
+            padding: 10px;
+            }
+
         </style>
     </head>
     <body>
         <!-- YOUR HTML TAGS GO HERE  -->
         <!-- All content goes here -->
-        <div>
+        <div id="all-contents">  
             <nav>
                 <h1>Jenna's Website</h1>
-                <ul>
-                    <li>
+                <ul id="nav-ul">
+                    <li class="nav-li">
                         <a href="index.html"> Home </a>
                     </li>
-                    <li><a href="portfolio.html"> Portfolio </a>
+                    <li class="nav-li">
+                        <a href="portfolio.html"> Portfolio </a>
                     </li>
                 </ul>
             </nav>
             <main>
                 <!-- Sidebar section -->
-                <div>
-                    <img src="Images/pfp.png">
+                <div class="sidebar">
+                    <img class="sidebar-img" src="Images/pfp.png">
                 </div>
-                <div>
+                <div id="all-contents">
                     <!-- Content section -->
-                    <!-- Interests section -->
-                    <div>
-                        <h3>Interests</h3>
-                        <ul>
-                        <li>Art</li>
-                        <li>Reading</li>
-                        <li>Soccer</li>
-                        </ul>
+                    <div class="content">
+                        <h2>Jenna Brown</h2>
+                        <p>Student at Northshore High</p>
+                        <!-- Interests section -->
+                        <div id="Interests">
+                            <h3>Interests</h3>
+                            <ul>
+                            <li>Art</li>
+                            <li>Reading</li>
+                            <li>Soccer</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             
