@@ -24,7 +24,10 @@
                 case 'kennedi':
                     collectable.scale.x = collectable.scale.y = 0.9;
                     break;
-                
+                    case 'peach':
+                        collectable.scale.x = collectable.scale.y = 0.9;
+                        case 'peachL':
+                        collectable.scale.x = collectable.scale.y = 0.9;
                 default:
                     // code
             }

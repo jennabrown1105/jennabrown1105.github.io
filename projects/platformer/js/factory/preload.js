@@ -14,5 +14,8 @@
         game.load.image('kennedi', './asset/collectable/kennedi-head.png');
         game.load.image('max', './asset/collectable/max-head.png');
         game.load.atlas('halle', './asset/halle/phaser-json-array/halle.png', './asset/halle/phaser-json-array/halle.json');
+        game.load.image('peach','./asset/collectable/collectable-peach.png');
+        game.load.image('bplatform', './asset/461-4610714_game-platform-png-transparent-background-platform-for-game(1).png');
+        game.load.image('peachL','./asset/collectable/collectable-peach left.png');
     };
 })(window);
