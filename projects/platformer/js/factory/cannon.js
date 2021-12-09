@@ -7,7 +7,7 @@
 
     opspark.cannon.factory = function (game) {
         const
-            assetKeyCannon = 'cannon',
+            assetKeyCannon = 'pcannon',
             assetKeyProjectile = 'projectile',
             projectileHalfSize = 12;
 
