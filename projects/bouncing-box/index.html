@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: rgb(223, 207, 250);
+			background: url("images/flower.png");
 			font-size: 300%;
 			text-align: center;
 			display: block;
@@ -17,13 +17,23 @@
 			left: 0px;  /* <--- Change me! */
 		}
 		.board{
+			background-image: url("images/background1.jpg");
+			background-repeat: no-repeat;
+			background-color: #cccccc;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+			
 			height: 100vh;
+			
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
-<body class="board">
+<body class="board"> 
+
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 
@@ -47,8 +57,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPostionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPostionY);
 			}
 
 			// changes the text displayed on the Box
@@ -62,15 +73,14 @@
 			
 			// TODO 2 - Variable declarations 
 			
+			var boardHeight = jQuery(window).height(); 
+			var positionY = 0;
 			var positionX = 0;
 			var points = 0;
 			var speed = 10;
-
-			// Frame 1
-				positionX = 0 + 10; 
-				moveBoxTo(positionX);
-				boardWidth = 1850;
-
+			var speedY = 10;
+			var randNumX = Math.random() * boardWidth;
+			var randNumY = Math.random() * boardHeight;
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -79,12 +89,19 @@
 			*/
 			function update() {
 				positionX = positionX + speed;
-				moveBoxTo(positionX);
-				if(positionX >= boardWidth){
+				positionY = positionY + speedY;
+				moveBoxTo(positionX, positionY);
+				if(positionX > boardWidth){
 					speed = -speed;
 				}
-				if(positionX <= 0){
-					speed = speed * -1;
+				if(positionX < 0){
+					speed = -speed;
+				}
+				if(positionY > boardHeight){
+					speedY = -speedY;
+				}
+				if(positionY < 0){
+					speedY = -speedY;
 				}
 			};
 
@@ -94,12 +111,27 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0;
+				positionX = randNumX;
+				positionY = randNumY;
+
 				points = points + 1;
 				changeBoxText(points);
+
 				speed = speed + 3;
+
+				if(speed > 1){
+					speed = speed + 3;
+				} else if (speed < 0) {
+					speed = speed - 3;
+				}
+				if(speedY > 1){
+					speedY = speedY + 3;
+				} else if (speedY < 0) {
+					speedY = speedY - 3;
+				}
 			};
 		})();
 	</script>
 </body>
 </html>
+		
