@@ -41,7 +41,6 @@
 		(function(){
 			'use strict'
 			/* global jQuery */
-
 			//////////////////////////////////////////////////////////////////
 			/////////////////// SETUP DO NOT DELETE //////////////////////////
 			//////////////////////////////////////////////////////////////////
@@ -52,7 +51,7 @@
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
-			
+
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
@@ -66,13 +65,10 @@
 			function changeBoxText(newText) {
 				box.text(newText);
 			}
-
 			//////////////////////////////////////////////////////////////////
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
-			
 			// TODO 2 - Variable declarations 
-			
 			var boardHeight = jQuery(window).height(); 
 			var positionY = 0;
 			var positionX = 0;
@@ -115,11 +111,8 @@
 				randNumY = Math.random() * boardHeight;
 				positionX = randNumX;
 				positionY = randNumY;
-
 				points = points + 1;
 				changeBoxText(points);
-
-
 				if(speed > 1){
 					speed = speed + 3;
 				} else if (speed < 0) {
