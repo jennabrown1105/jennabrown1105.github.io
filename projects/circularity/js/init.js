@@ -68,13 +68,13 @@ var init = function (window) {
             game.checkCirclePosition(circles[2]);
             game.checkCirclePosition(circles[3]);
             game.checkCirclePosition(circles[4]);
-        */
+        */ // manually updates and checks the position of individual circles
             // TODO 9 : Iterate over the array
            for (var i = 0; i < circles.length; i++){
                var eachCircle = circles[i];
                physikz.updatePosition(eachCircle);
                game.checkCirclePosition(eachCircle);
-           }   
+           }   // created a loop that automatically updates and checks all the circles 
         }
     
         /* 
