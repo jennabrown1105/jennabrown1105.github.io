@@ -24,7 +24,7 @@ var init = function (window) {
         playerManager, 
         particleManager;
     
-    var debugHalleHitZones = true;
+    var debugHalleHitZones = false; //turns on and off halle's hitzones
 
     space = app.space;
     rules = app.rules,
@@ -34,6 +34,10 @@ var init = function (window) {
     // TODO 2 : add background
     var background = opspark.makeBackground(app,ground); // created a var called background to hold the background
     view.addChild(background);// add the background to the viewport so we can see it
+    /*var backgroundImage =  draw.bitmap('img/runbackgrounds.png');
+    backgroundImage.x = window;
+    backgroundImage.y = window;
+    background.addChild(backgroundImage);- i tried to make a background it didnt work though*/
     
     var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!', 
         '20px Arial',

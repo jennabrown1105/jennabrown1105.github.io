@@ -18,9 +18,9 @@ var background = function (window) {
         }
         
         // useful variables
-        var canvasWidth = app.canvas.width;
-        var canvasHeight = app.canvas.height;
-        var groundY = ground.y;
+        var canvasWidth = app.canvas.width; //containers to hold the width
+        var canvasHeight = app.canvas.height;//containers to hold the height
+        var groundY = ground.y; //sets the ground
         
         // container which will be returned
         var background;
@@ -43,20 +43,28 @@ var background = function (window) {
             for(var i = 0; i <= 100; i++ ){
                 var circle = draw.circle(3,'white','LightGray',2); // creates a var called circle that holds each circle
                 circle.x = canvasWidth*Math.random(); // multiplies canvasWidth * a random decimal between .1 and .99 and assigns it to circle.y 
-                circle.y = groundY*Math.random(); // adds the circle to the background
-                background.addChild(circle);
+                circle.y = groundY*Math.random(); // multiplies groundY * a random decimal between .1 and .99 and assigns it to circle.y 
+                background.addChild(circle); //adds the circle to the background
             }
 
-            var moon = draw.bitmap('img/moon.png'); // A var moon that holds bitmat drawing of the moon
-            moon.x = canvasWidth - 300; // holds the x value (left to right)
-            moon.y = groundY - 450; // holds the y value (up and down)
-            moon.scaleX = 0.5; // changes the x scale of the moon
-            moon.scaleY = 0.5; // changes the y scale of the moon
+            var moon = draw.bitmap('img/planetss.png'); // A var moon that holds bitmat drawing of the planet
+            moon.x = canvasWidth - 590; // holds the x value (left to right)
+            moon.y = groundY - 390; // holds the y value (up and down)
+            moon.scaleX = .8; // changes the x scale of the planet
+            moon.scaleY = .8; // changes the y scale of the planet 
             background.addChild(moon); //adds the moon to the background
+            var planet = draw.bitmap('img/fplanet.png');  // A var planet that holds bitmap drawing of the planet
+            planet.x = canvasWidth - 2000;// holds the x value (left to right)
+            planet.y = groundY - 600;// holds the y value (up and down)
+            planet.scaleX = .5;// changes the x scale of the planet
+            planet.scaleY = .5;// changes the y scale of the planet
+            background.addChild(planet);//adds the planet to the background
+            
+
 
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             //every time this loop runs, it creates a building with an x and y value and pushes it to the buildings array
-            for(var i = 0; i < 5; i++) {
+            /*for(var i = 0; i < 5; i++) {
                 var buildingHeight = 300; //declare variable called buildingHeight that holds the height of the building in pixels
                 var building = draw.rect(75,buildingHeight,'#5D4173','#5D4173',1); // declares a varable called building that will hold each building
                 building.x = 200*i; // adds 200 pixels to the x value every time the loop runs
@@ -64,14 +72,14 @@ var background = function (window) {
                 background.addChild(building); //adds the building to the background so we can see it
                 buildings.push(building); //push the building data to the buildings array and store it as an index
             }
-            
+            */
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap('img/tree.png');
-            tree.x = canvasWidth - 210;
-            tree.y = groundY - 230;
-            tree.scaleX;
-            tree.scaleY;
-            background.addChild(tree);
+            tree = draw.bitmap('img/street-light.png'); //stores the tree picture
+            tree.x = canvasWidth - 210; //sets x for the tree
+            tree.y = groundY - 200; //sets y for the tree
+            tree.scaleX = .05; //sets x scale
+            tree.scaleY = .05; //sets y scale
+            background.addChild(tree); //adds the tree to the background
             
 
         } // end of render function - DO NOT DELETE
@@ -90,7 +98,7 @@ var background = function (window) {
 
             if(tree.x < -200) {
                 tree.x = canvasWidth;
-            }
+            } //moves the tree and resets it once its past a certain point
             
             // TODO 5: Part 2 - Parallax
             
